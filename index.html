@@ -30,9 +30,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contactenos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="carrito.html">Mi Carrito: $<strong id="totNavBar">0</strong></a>
-                    </li>
+           
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="carrito.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Mi Carrito: $<strong id="totNavBar">0</strong>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="carrito.html">Ir a mi carrito</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" id="empty" href="#">Vaciar Carrito</a></li>
+                  </ul>
+                </li>
 
            
 
@@ -44,17 +53,10 @@
     <div class="row" >
         <div class="col-sm-3">
             <div class="card text-center" style="width: 18rem;">
-                
-            
-                <img src="img/DCD980L2_1L.jpeg" class="card-img-top" alt="...">
-               
-
-
-
-                <div class="card-body">
-                    <h5 class="card-title">Taladro Percutor Inalámbrico Dewalt 20v Max</h5>
-                    <p class="card-text">Rangos de 2 velocidades van de 0-550 / 0-2000 rpm ofrece aplicaciones hasta un
-                        30% más rápidas.</p>
+        <img id="img1" src="" class="card-img-top" alt="...">
+             <div class="card-body">
+                    <h5 class="card-title"><span id="name-1"></span></h5>
+                    <p class="card-text"><span id="desc-1"></span></p>
                     <p class="card-text">Precio: $<strong id="price1"></strong></p>
                     <a id="add1" href="#" class="btn btn-primary">Agregar al carrito</a>
                     
@@ -63,11 +65,10 @@
         </div>
         <div class="col-sm-3">
             <div class="card text-center" style="width: 18rem;">
-                <img src="img/rotop.png" class="card-img-top" alt="...">
+                <img id="img2" src="" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Rotomartillo Taladro Percutor Stanley 1250w</h5>
-                    <p class="card-text">Poderoso motor de 1250W para un amplio rango de aplicaciones de taladrado y cincelado
-                        Diseño con piston en "L" para mayor poder</p>
+                    <h5 class="card-title"><span id="name-2"></span></h5>
+                    <p class="card-text"><span id="desc-2"></span></p>
                     <p class="card-text">Precio: $<strong id="price2"></strong></p>
                     <a id="add2" href="#" class="btn btn-primary">Agregar al carrito</a>
                     
@@ -76,11 +77,10 @@
         </div>
         <div class="col-sm-3">
             <div class="card text-center" style="width: 18rem;">
-                <img src="img/zorr.jpeg" class="card-img-top" alt="...">
+                <img id="img3" src="" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Carro Aluminio Plegable Stanley </h5>
-                    <p class="card-text">Carro de mano plegable hasta 50Kg
-                        Se dobla y abre en segundos</p>
+                    <h5 class="card-title"><span id="name-3"></span></h5>
+                    <p class="card-text"><span id="desc-3"></span></p>
                     <p class="card-text">Precio: $<strong id="price3"></strong></p>
                     <a id="add3" href="#" class="btn btn-primary">Agregar al carrito</a>
                     
