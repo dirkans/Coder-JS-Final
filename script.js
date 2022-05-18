@@ -30,13 +30,27 @@ class Productos{
         let aLocalStorage = JSON.stringify(carrito);
         localStorage.setItem("carrito",aLocalStorage);
         refreshTotNavBar();
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: `${this.nombre} <br>Agregado al carrito`,
-            showConfirmButton: false,
-            timer: 1500
-          })
+        // Swal.fire({
+        //     position: 'center',
+        //     icon: 'success',
+        //     title: `${this.nombre} <br>Agregado al carrito`,
+        //     showConfirmButton: false,
+        //     timer: 1500
+        //   })
+        Toastify({
+          text: `  ${this.nombre} Agregado al carrito`,
+          duration: 4000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
     }    
 
     verMas(){
@@ -78,8 +92,6 @@ function refreshTotNavBar(){
     largoCarrito = carrito.length;
     for(x in carrito){
     tot = tot + carrito[x].precio
-    
-
 }
 totNavBar.innerHTML = tot;
 }
