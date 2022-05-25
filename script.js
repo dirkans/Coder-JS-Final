@@ -1,6 +1,5 @@
 var carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-
 //Importamos el total del carrito de la barra de navegacion
 totNavBar = document.getElementById("totNavBar"); 
 
@@ -35,7 +34,6 @@ class Productos{
         Toastify({
           text: `  ${this.nombre} Agregado al carrito`,
           duration: 3000,
-          // destination: "#",
           newWindow: true,
           close: true,
           gravity: "bottom", // `top` or `bottom`
@@ -57,10 +55,7 @@ class Productos{
         imageAlt: 'Imagen del producto'        
       })
     }
-
-
 }    
-
 
 //Importamos los botones de agregar al carrito de cada producto
 add1 = document.getElementById("add1"); 
@@ -70,9 +65,8 @@ ver1 = document.getElementById("ver1");
 ver2 = document.getElementById("ver2");
 ver3 = document.getElementById("ver3");
 ver4 = document.getElementById("ver4");
-
 empty = document.getElementById("empty");
-
+myCarr = document.getElementById("myCarr");
 
 
 //OBJETOS
@@ -115,6 +109,47 @@ Swal.fire({
   })
 }
 
+function viewCarrito(){
+  Swal.fire({
+    title: '<strong>Su carrito</u></strong>',
+    icon: 'info',
+    html:
+    `<div class="card">`+
+    `<div class="card-body">`+      
+    `      <ul id="ulCarrito" class="list-group">`+
+    `</ul>`+
+    `    </div>`+
+    ` </div>` ,
+    showCloseButton: false,
+    showCancelButton: false,
+    focusConfirm: false,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up"></i> Cerrar',
+    confirmButtonAriaLabel: 'Cerrar',
+    cancelButtonText:
+      '<i class="fa fa-thumbs-down"></i>',
+    cancelButtonAriaLabel: 'Thumbs down'
+  })
 
+  for(item in carrito){
+    let ulCarrito = document.getElementById("ulCarrito");
+    let nLi = document.createElement("li");
+    nLi.id = item;
+    nLi.className = "list-group-item";
+    nLi.innerHTML = `<img class="ulPic" src="${carrito[item].img}"> ${carrito[item].nombre} --- PRECIO: ${carrito[item].precio}`
+    ulCarrito.appendChild(nLi);
+     }
+}
 
+//EVENTOS
 empty.onclick = () =>{vaciarCarrito()};
+myCarr.onclick = () =>{viewCarrito()};
+
+
+//API DOLAR
+fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+  .then(res=>res.json())
+  .then(res=> cotDolar.innerHTML = res[1].casa.venta)
+  
+
+
