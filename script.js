@@ -17,6 +17,8 @@ desc1 = document.getElementById("desc-1");
 desc2 = document.getElementById("desc-2");
 desc3 = document.getElementById("desc-3");
 desc4 = document.getElementById("desc-4");
+cotDolar = document.getElementById("cotDolar");
+
 
 class Productos{
     constructor(nombre,precio,descripcion,img){
@@ -30,20 +32,13 @@ class Productos{
         let aLocalStorage = JSON.stringify(carrito);
         localStorage.setItem("carrito",aLocalStorage);
         refreshTotNavBar();
-        // Swal.fire({
-        //     position: 'center',
-        //     icon: 'success',
-        //     title: `${this.nombre} <br>Agregado al carrito`,
-        //     showConfirmButton: false,
-        //     timer: 1500
-        //   })
         Toastify({
           text: `  ${this.nombre} Agregado al carrito`,
-          duration: 4000,
-          destination: "https://github.com/apvarun/toastify-js",
+          duration: 3000,
+          // destination: "#",
           newWindow: true,
           close: true,
-          gravity: "top", // `top` or `bottom`
+          gravity: "bottom", // `top` or `bottom`
           position: "left", // `left`, `center` or `right`
           stopOnFocus: true, // Prevents dismissing of toast on hover
           style: {
@@ -86,9 +81,9 @@ stanleyRoto1250 = new Productos("Rotomartillo Taladro Percutor Stanley 1250w",51
 carroStanley = new Productos("Carro Aluminio Plegable Stanley",11900,"Carro de mano plegable hasta 50Kg Se dobla y abre en segundos","img/zorr.jpeg");
 bdwd10 = new Productos("Aspiradora Black&Decker 10L Polvo y Agua",23624,"Potente aspiradora ideal para todas las tareas de limpieza del hogar. Aspira polvo y agua sin dificultad.","img/bdwd10.jpeg");
 
-var tot = 0;
 
 function refreshTotNavBar(){
+    var tot = 0;
     largoCarrito = carrito.length;
     for(x in carrito){
     tot = tot + carrito[x].precio

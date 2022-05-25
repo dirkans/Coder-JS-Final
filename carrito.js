@@ -1,7 +1,7 @@
 
-// totCarrito = document.getElementById("totCarrito");
+totCarrito = document.getElementById("totCarrito");
 
-// totCarrito.innerHTML = tot;
+totCarrito.innerHTML = tot;
 
 
 for(item in carrito){
