@@ -1,3 +1,5 @@
+
+
 .ulPic{
     height: 80px;
 }
@@ -13,5 +15,34 @@
 .sticky{
 position: sticky;
 top: 0;
-
 }
+
+
+.losprodu{
+    width: 100%;
+}
+
+
+footer {
+        background-color: #333333;
+        text-align: center;
+        width: 100%;
+        margin-top: 40px;
+        padding: 20px;
+        color: #f5f5f5; 
+    }
+    
+    .footer-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+    }
+    footer a {
+        color: white;
+        text-decoration: none;
+    }
+
+
+    
